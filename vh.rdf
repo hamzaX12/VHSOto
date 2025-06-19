@@ -1,0 +1,1336 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi/"
+     xml:base="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ontolosafi="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourCoordonnées -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourCoordonnées">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Localisation"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourCoordonnées"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CoordonnéesGéographiques"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourDate -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourDate"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourHoraire -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourHoraire">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ServiceTouristique"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourLocalisation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourLocalisation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ServiceTouristique"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SitePatrimonial"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourLocalisation"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Localisation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#estGuidePour -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#estGuidePour">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#GuideTouristique"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#fabriqueArtisanat -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#fabriqueArtisanat">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Artisan"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Artisanat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#faitPartieDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#faitPartieDe">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SitePatrimonial"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#organiseÉvénement -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#organiseÉvénement">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Musée"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ville"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#participeÀ -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#participeÀ">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Touriste"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#proposeService -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#proposeService">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ServiceTouristique"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hébergement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restauration"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Transport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#seDéplacePar -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#seDéplacePar">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Touriste"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Transport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#seSitueDans -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#seSitueDans">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Quartier"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ville"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ville"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#visiteLieu -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#visiteLieu">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Touriste"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SitePatrimonial"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourAtelier -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourAtelier">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourAtelier"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourCoordonnées -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourCoordonnées"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourDate"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourDescription">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourDescription"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourDurée -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourDurée">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourDurée"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourLocalisation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourLocalisation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourNom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourNom">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourNom"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourProfession -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourProfession">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourProfession"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourRéférence -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourRéférence">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourRéférence"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourSpécialité -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourSpécialité">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourSpécialité"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourType">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourType"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#imageURL -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#imageURL"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#inclutSite -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#inclutSite">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#inclutSite"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#organiséPar -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#organiséPar">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#organiséPar"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#parleLangue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#parleLangue">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#parleLangue"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#réaliséPar -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#réaliséPar">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#réaliséPar"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#zoneCouverte -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#zoneCouverte">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#zoneCouverte"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#zoneDesservie -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#zoneDesservie">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#zoneDesservie"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Artisan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Artisan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Personne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Artisanat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Artisanat"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#BusTouristique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#BusTouristique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Transport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Café -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Café">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restauration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CircuitCulturel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CircuitCulturel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CircuitGastronomique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CircuitGastronomique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CircuitNaturel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CircuitNaturel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CoordonnéesGéographiques -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CoordonnéesGéographiques">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Localisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CélébrationTraditionnelle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CélébrationTraditionnelle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Céramique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Céramique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Artisanat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Exposition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Exposition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Falaises -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Falaises">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SiteNaturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Festival -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Festival">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Fortification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Fortification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Monument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Grotte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Grotte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SiteNaturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#GuideTouristique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#GuideTouristique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Personne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Géosite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Géosite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SiteNaturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hébergement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hébergement"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hôtel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hôtel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hébergement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Localisation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Localisation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Monument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Monument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SitePatrimonial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#MonumentHistorique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#MonumentHistorique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Monument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#MonumentReligieux -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#MonumentReligieux">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Monument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Musée -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Musée">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SitePatrimonial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#MuséeArchéologique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#MuséeArchéologique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Musée"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#MuséeArtisanat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#MuséeArtisanat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Musée"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Personne -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Personne"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Plage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Plage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SiteNaturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Poterie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Poterie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Artisanat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Quartier -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Quartier">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Localisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restaurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restaurant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restauration"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restauration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restauration">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ServiceTouristique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ServiceTouristique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ServiceTouristique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SiteNaturel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SiteNaturel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SitePatrimonial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SitePatrimonial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SitePatrimonial"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Taxi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Taxi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Transport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Tissage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Tissage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Artisanat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Touriste -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Touriste">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Personne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Transport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Transport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ServiceTouristique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ville -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ville">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Localisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Maison_d’hôtes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Maison_d’hôtes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hébergement"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Abdelhak_Hanboubi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Abdelhak_Hanboubi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Artisan"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Personne"/>
+        <ontolosafi:aPourAtelier>Quartier de la Médina</ontolosafi:aPourAtelier>
+        <ontolosafi:aPourProfession>Artisan potier</ontolosafi:aPourProfession>
+        <ontolosafi:aPourSpécialité>Poterie Safiote</ontolosafi:aPourSpécialité>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ahmed_Serghini -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ahmed_Serghini">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Artisan"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Personne"/>
+        <ontolosafi:aPourAtelier>Ets Ahmed Serghini</ontolosafi:aPourAtelier>
+        <ontolosafi:aPourProfession>Potière / Céramiste</ontolosafi:aPourProfession>
+        <ontolosafi:aPourSpécialité>Poterie traditionnelle et artisanat haut de gamme</ontolosafi:aPourSpécialité>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Association_des_Artisans_de_Safi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Association_des_Artisans_de_Safi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+        <ontolosafi:organiseÉvénement rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Exposition_Artisanale_de_Safi"/>
+        <ontolosafi:aPourType>Association professionnelle</ontolosafi:aPourType>
+        <ontolosafi:organiséPar>Exposition Artisanale de Safi</ontolosafi:organiséPar>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Bus_Touristique_Safi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Bus_Touristique_Safi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#BusTouristique"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Transport"/>
+        <ontolosafi:aPourType>Bus à impériale pour les circuits touristiques.</ontolosafi:aPourType>
+        <ontolosafi:zoneDesservie>Principaux sites touristiques de Safi</ontolosafi:zoneDesservie>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CHAIR_Bouchaib -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CHAIR_Bouchaib">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#GuideTouristique"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Personne"/>
+        <ontolosafi:aPourProfession>Guide touristique</ontolosafi:aPourProfession>
+        <ontolosafi:parleLangue>Français, Arabe</ontolosafi:parleLangue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Café_El_Bahia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Café_El_Bahia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Café"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restauration"/>
+        <ontolosafi:aPourCoordonnées>32.2955° N, 9.2305° W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourLocalisation>Quartier de la Médina</ontolosafi:aPourLocalisation>
+        <ontolosafi:aPourType>Café traditionnel</ontolosafi:aPourType>
+        <ontolosafi:imageURL>https://sl.bing.net/f7PeUPvbwPs</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Cap_Beddouza -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Cap_Beddouza">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CoordonnéesGéographiques"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Localisation"/>
+        <ontolosafi:aPourCoordonnées>32.4000° N, 9.1500° W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourDescription>Village côtier au nord de Safi, connu pour ses falaises et formations naturelles</ontolosafi:aPourDescription>
+        <ontolosafi:imageURL>https://sl.bing.net/eI7VSGNMG4W</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Cappuccino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Cappuccino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Café"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restauration"/>
+        <ontolosafi:aPourCoordonnées>32.3096 N, −9.2431 W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourLocalisation>Avenue Mohamed Belkhadir, Quartier Riad, Safi</ontolosafi:aPourLocalisation>
+        <ontolosafi:aPourType>Café &amp; Restaurant</ontolosafi:aPourType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Cathédrale_Portugaise -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Cathédrale_Portugaise">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#MonumentHistorique"/>
+        <ontolosafi:aPourCoordonnées>32.2990° N, 9.2340° W.</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourDescription>Vestige de l&apos;époque coloniale portugaise</ontolosafi:aPourDescription>
+        <ontolosafi:aPourLocalisation>Quartier de la Médina</ontolosafi:aPourLocalisation>
+        <ontolosafi:imageURL>https://sl.bing.net/k6HOatIQnn2</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Circuit_Culturel_de_Safi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Circuit_Culturel_de_Safi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+        <ontolosafi:aPourDurée>1 journée</ontolosafi:aPourDurée>
+        <ontolosafi:inclutSite>Ksar El Bahr, Cathédrale Portugaise, Musée National de la Céramique</ontolosafi:inclutSite>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Circuit_Naturel_de_Safi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Circuit_Naturel_de_Safi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+        <ontolosafi:aPourDurée>1 journée</ontolosafi:aPourDurée>
+        <ontolosafi:inclutSite>Plage de Lalla Fatna, Grotte du Cap Beddouza</ontolosafi:inclutSite>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CoordonnéesGéographiques -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CoordonnéesGéographiques">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Localisation"/>
+        <ontolosafi:aPourCoordonnées>32.3000° N, 9.2333° W</ontolosafi:aPourCoordonnées>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Exposition_Artisanale_de_Safi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Exposition_Artisanale_de_Safi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+        <ontolosafi:aPourDate>10-20 août 2025</ontolosafi:aPourDate>
+        <ontolosafi:aPourDescription>Exposition mettant en valeur l&apos;artisanat local</ontolosafi:aPourDescription>
+        <ontolosafi:organiséPar>Association des Artisans de Safi</ontolosafi:organiséPar>
+        <ontolosafi:organiséPar>Quartier de la Médina</ontolosafi:organiséPar>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Fatima_El_Hadi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Fatima_El_Hadi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Artisan"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Personne"/>
+        <ontolosafi:aPourAtelier>Quartier de la Médina</ontolosafi:aPourAtelier>
+        <ontolosafi:aPourProfession>Artisane tisserande</ontolosafi:aPourProfession>
+        <ontolosafi:aPourSpécialité>Tissage de Safi</ontolosafi:aPourSpécialité>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Festival_National_de_la_Céramique -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Festival_National_de_la_Céramique">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Festival"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+        <ontolosafi:aPourDate>15 juillet 2025</ontolosafi:aPourDate>
+        <ontolosafi:aPourDescription>Célébration annuelle de l&apos;art de la céramique</ontolosafi:aPourDescription>
+        <ontolosafi:aPourLocalisation>Ville de Safi</ontolosafi:aPourLocalisation>
+        <ontolosafi:organiséPar>Musée National de la Céramique</ontolosafi:organiséPar>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Grotte_du_Cap_Beddouza -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Grotte_du_Cap_Beddouza">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CircuitNaturel"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SiteNaturel"/>
+        <ontolosafi:aPourLocalisation rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Cap_Beddouza"/>
+        <ontolosafi:aPourCoordonnées>32.4000° N, 9.1500° W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourDescription>Grotte naturelle avec des formations géologiques uniques</ontolosafi:aPourDescription>
+        <ontolosafi:aPourLocalisation>Cap Beddouza</ontolosafi:aPourLocalisation>
+        <ontolosafi:imageURL>https://sl.bing.net/cR2jUhoVXOe</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hotel_Kenzo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hotel_Kenzo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hébergement"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hôtel"/>
+        <ontolosafi:aPourLocalisation rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ville_de_Safi"/>
+        <ontolosafi:aPourCoordonnées>32.3080 N, −9.2400 W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourLocalisation>64 Avenue John Kennedy, Safi</ontolosafi:aPourLocalisation>
+        <ontolosafi:aPourType>Hôtel 3 étoiles</ontolosafi:aPourType>
+        <ontolosafi:imageURL>https://sl.bing.net/jmktn0cvg6K</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hôtel_Atlantique_Panorama -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hôtel_Atlantique_Panorama">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hébergement"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hôtel"/>
+        <ontolosafi:aPourLocalisation rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ville_de_Safi"/>
+        <ontolosafi:aPourCoordonnées>32.2950 N, −9.2440 W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourLocalisation>Corniche de Sidi Bouzid, Safi 46000, Maroc</ontolosafi:aPourLocalisation>
+        <ontolosafi:aPourType>Hôtel  4 Étoiles</ontolosafi:aPourType>
+        <ontolosafi:imageURL>https://sl.bing.net/bEwf3BE5qlE</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hôtel_Riad_Asfi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hôtel_Riad_Asfi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hébergement"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hôtel"/>
+        <ontolosafi:aPourLocalisation rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ville_de_Safi"/>
+        <ontolosafi:aPourCoordonnées>32.2986 N, −9.2418 W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourLocalisation>11 Place de l&apos;Indépendance, Safi</ontolosafi:aPourLocalisation>
+        <ontolosafi:imageURL>https://sl.bing.net/cMilPZvWXPE</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ksar_El_Bahr -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ksar_El_Bahr">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Monument"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#MonumentHistorique"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SitePatrimonial"/>
+        <ontolosafi:aPourLocalisation rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ville_de_Safi"/>
+        <ontolosafi:aPourCoordonnées>32.3000° N, 9.2333° W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourDescription>Forteresse portugaise du XVe siècle, emblème de Safi</ontolosafi:aPourDescription>
+        <ontolosafi:aPourLocalisation>Ville de Safi</ontolosafi:aPourLocalisation>
+        <ontolosafi:imageURL>https://sl.bing.net/ed6hPWmTvNI</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#La_Braise -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#La_Braise">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restaurant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restauration"/>
+        <ontolosafi:aPourLocalisation>Atlantic Valley, Safi 46000</ontolosafi:aPourLocalisation>
+        <ontolosafi:aPourType>Café &amp; Restaurant</ontolosafi:aPourType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#La_Trattoria -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#La_Trattoria">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restaurant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restauration"/>
+        <ontolosafi:aPourCoordonnées>Latitude : 32.3052° N</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourLocalisation>2 Route de Laouinat, Safi, Maroc</ontolosafi:aPourLocalisation>
+        <ontolosafi:aPourType>Restaurant</ontolosafi:aPourType>
+        <ontolosafi:imageURL>https://sl.bing.net/j5JJvBa9Sua</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Latifa_Ziouani -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Latifa_Ziouani">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Artisan"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Personne"/>
+        <ontolosafi:aPourAtelier>Galerie de Latifa Ziouan</ontolosafi:aPourAtelier>
+        <ontolosafi:aPourProfession>Artisane-Potière</ontolosafi:aPourProfession>
+        <ontolosafi:aPourSpécialité>Poterie traditionnelle de Safi</ontolosafi:aPourSpécialité>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Mausolée_Ouled_Ben_Zmirou -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Mausolée_Ouled_Ben_Zmirou">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Monument"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#MonumentReligieux"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SitePatrimonial"/>
+        <ontolosafi:aPourCoordonnées>32.2985° N, 9.2350° W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourDescription>Lieu de culte juif historique</ontolosafi:aPourDescription>
+        <ontolosafi:aPourLocalisation>Quartier juif de Safi</ontolosafi:aPourLocalisation>
+        <ontolosafi:imageURL>https://sl.bing.net/sBVneFcJbw</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Musée_National_de_la_Céramique -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Musée_National_de_la_Céramique">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Musée"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#MuséeArtisanat"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SitePatrimonial"/>
+        <ontolosafi:aPourCoordonnées>32.3010° N, 9.2330° W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourDescription>Musée dédié à l’histoire et à l’art de la céramique safiote</ontolosafi:aPourDescription>
+        <ontolosafi:aPourLocalisation>Ville de Safi</ontolosafi:aPourLocalisation>
+        <ontolosafi:imageURL>https://sl.bing.net/fHEm1XMyevA</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Oualidia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Oualidia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CircuitNaturel"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Localisation"/>
+        <ontolosafi:aPourCoordonnées>32° 44′ nord, 9° 01′ ouest</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourDescription>Ville située à 60 km d’El Jadida et à 66 km de capitale de la province, Safi.</ontolosafi:aPourDescription>
+        <ontolosafi:imageURL>https://sl.bing.net/bIx8jGMh1xY</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Plage_Oualidia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Plage_Oualidia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CircuitNaturel"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Plage"/>
+        <ontolosafi:aPourLocalisation rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Oualidia"/>
+        <ontolosafi:aPourCoordonnées>32.7460° N</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourDescription>la plage d&apos;Oualidia au Maroc est une belle lagune protégée avec des eaux calmes, idéale pour la baignade et les sports nautiques comme le surf et le kayak.</ontolosafi:aPourDescription>
+        <ontolosafi:aPourLocalisation>Oualidia</ontolosafi:aPourLocalisation>
+        <ontolosafi:imageURL>https://sl.bing.net/jdqayLR7S6m</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Plage_Safi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Plage_Safi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CircuitNaturel"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Plage"/>
+        <ontolosafi:aPourLocalisation rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ville_de_Safi"/>
+        <ontolosafi:aPourCoordonnées>32.3154° N, 9.2491° W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourDescription>Située au nord de la ville, cette plage de sable fin est réputée pour ses vagues puissantes, idéales pour le surf.</ontolosafi:aPourDescription>
+        <ontolosafi:aPourLocalisation>Safi</ontolosafi:aPourLocalisation>
+        <ontolosafi:imageURL>https://sl.bing.net/hrmkC35CUge</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Plage_Souiria -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Plage_Souiria">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CircuitNaturel"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Plage"/>
+        <ontolosafi:aPourLocalisation rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Souiria_Kdima"/>
+        <ontolosafi:aPourCoordonnées>32° 02′ 8″ N, 9° 20′ 30″ W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourDescription>La plage de Souiria Lakdima est une destination balnéaire  sur la côte atlantique du Maroc.</ontolosafi:aPourDescription>
+        <ontolosafi:aPourLocalisation>Souiria</ontolosafi:aPourLocalisation>
+        <ontolosafi:imageURL>https://sl.bing.net/el0mTFyZVPo</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Plage_de_Lalla_Fatna -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Plage_de_Lalla_Fatna">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#CircuitNaturel"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Plage"/>
+        <ontolosafi:aPourLocalisation rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ville_de_Safi"/>
+        <ontolosafi:aPourCoordonnées>32.3500° N, 9.2000° W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourDescription>Plage réputée pour le surf</ontolosafi:aPourDescription>
+        <ontolosafi:aPourLocalisation>Environ 10 km au nord de Safi</ontolosafi:aPourLocalisation>
+        <ontolosafi:imageURL>https://sl.bing.net/j8ZpdvLjgD6</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Poterie_Safiote -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Poterie_Safiote">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Artisan"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Poterie"/>
+        <ontolosafi:aPourAtelier>Quartier de la Médina</ontolosafi:aPourAtelier>
+        <ontolosafi:aPourDescription>Poterie traditionnelle avec des motifs géométriques</ontolosafi:aPourDescription>
+        <ontolosafi:imageURL>https://sl.bing.net/cXY7vwFHjG0</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Quartier_de_Bab_Chaâba -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Quartier_de_Bab_Chaâba">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Localisation"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Quartier"/>
+        <ontolosafi:aPourCoordonnées>32.3018° N, 9.2387° W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourDescription>Quartier artisanal célèbre surtout pour la poterie. Bab Chaâba regroupe de nombreux ateliers et boutiques d’artisans potiers.</ontolosafi:aPourDescription>
+        <ontolosafi:imageURL>https://sl.bing.net/ddZrWKv7sfk</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Quartier_de_la_Médina -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Quartier_de_la_Médina">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Localisation"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Quartier"/>
+        <ontolosafi:aPourCoordonnées>32.2950° N, 9.2300° W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourDescription>Quartier historique de Safi</ontolosafi:aPourDescription>
+        <ontolosafi:imageURL>https://sl.bing.net/iVZG3xtdYnA</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restaurant_Chez_Hosni -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restaurant_Chez_Hosni">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restaurant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restauration"/>
+        <ontolosafi:aPourCoordonnées>32.2955° N</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourLocalisation>7 bis, Rue des Forgerons, Colline des Potiers, Safi</ontolosafi:aPourLocalisation>
+        <ontolosafi:aPourType>Restaurant</ontolosafi:aPourType>
+        <ontolosafi:imageURL>https://sl.bing.net/h78Q65gJbbw</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restaurant_Le_Riad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restaurant_Le_Riad">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restaurant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restauration"/>
+        <ontolosafi:aPourCoordonnées>32.2940° N, 9.2290° W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourLocalisation>Centre-ville de Safi</ontolosafi:aPourLocalisation>
+        <ontolosafi:aPourType>Cuisine marocaine</ontolosafi:aPourType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Riad_du_Pêcheur -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Riad_du_Pêcheur">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restaurant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restauration"/>
+        <ontolosafi:aPourCoordonnées>32.3037 N, −9.2417 W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourLocalisation>1 Rue des Crêtes, Safi 46000</ontolosafi:aPourLocalisation>
+        <ontolosafi:aPourType>Restaurant</ontolosafi:aPourType>
+        <ontolosafi:imageURL>https://sl.bing.net/b3RhlsxQvJs</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Souiria_Kdima -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Souiria_Kdima">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Localisation"/>
+        <ontolosafi:aPourCoordonnées>32,04022° ou 32° 2′ 25″ nord</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourDescription>Souira Kedima, également connue sous le nom de Souira Guedima ou Aguz, est un petit village côtier .Il se trouve à l’embouchure de l’oued Tensift, sur la côte atlantique</ontolosafi:aPourDescription>
+        <ontolosafi:imageURL>https://sl.bing.net/hiMjpU4ihHM</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Taxi_Safi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Taxi_Safi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Taxi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Transport"/>
+        <ontolosafi:aPourType>Service de taxi local</ontolosafi:aPourType>
+        <ontolosafi:imageURL>https://sl.bing.net/cJ0o2fExJZs</ontolosafi:imageURL>
+        <ontolosafi:zoneDesservie>Ville de Safi</ontolosafi:zoneDesservie>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Tissage_de_Safi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Tissage_de_Safi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Artisan"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Tissage"/>
+        <ontolosafi:aPourAtelier>Quartier de la Médina</ontolosafi:aPourAtelier>
+        <ontolosafi:aPourDescription>Tapis tissés à la main avec des motifs berbères</ontolosafi:aPourDescription>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Valley_Boutique_Hotel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Valley_Boutique_Hotel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hébergement"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hôtel"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+        <ontolosafi:aPourLocalisation rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ville_de_Safi"/>
+        <ontolosafi:aPourCoordonnées>32.3038° N, −9.2404° W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourLocalisation>Rue Dar Si Aissa, Quartier France, 46000 Safi, Maroc</ontolosafi:aPourLocalisation>
+        <ontolosafi:aPourType>Hotel 3 Étoiles</ontolosafi:aPourType>
+        <ontolosafi:imageURL>https://sl.bing.net/b3kfFaKOAU0</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ville_de_Safi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ville_de_Safi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Localisation"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ville"/>
+        <ontolosafi:aPourCoordonnées>32.3000° N, 9.2333° W.</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourDescription>Ville portuaire sur la côte atlantique du Maroc</ontolosafi:aPourDescription>
+        <ontolosafi:imageURL>https://sl.bing.net/bpD3pvKwvsG</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Youssef_El_Amrani -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Youssef_El_Amrani">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#GuideTouristique"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Personne"/>
+        <ontolosafi:organiseÉvénement rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Festival_National_de_la_Céramique"/>
+        <ontolosafi:aPourProfession>Guide touristique</ontolosafi:aPourProfession>
+        <ontolosafi:parleLangue>Arabe, Français, Anglais</ontolosafi:parleLangue>
+        <ontolosafi:zoneCouverte>Circuits culturels et naturels de Safi</ontolosafi:zoneCouverte>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#le_plus_grand_tajin__du_monde -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#le_plus_grand_tajin__du_monde">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Monument"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#MonumentHistorique"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SitePatrimonial"/>
+        <ontolosafi:aPourLocalisation rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ville_de_Safi"/>
+        <ontolosafi:aPourCoordonnées>32°17′41″ N, 9°14′1″ W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourDescription>Le Tajine de Safi est une œuvre emblématique située sur la place Mohammed V à Safi, au Maroc. Ce monument est reconnu pour sa taille impressionnante et son importance culturelle.</ontolosafi:aPourDescription>
+        <ontolosafi:aPourLocalisation>Ville de Safi</ontolosafi:aPourLocalisation>
+        <ontolosafi:imageURL>https://sl.bing.net/vZuDJM3jwa</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Festival_National_de_l’Art_d’El_Aïta -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Festival_National_de_l’Art_d’El_Aïta">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Festival"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+        <ontolosafi:aPourDate>18 au 21 juillet 2024</ontolosafi:aPourDate>
+        <ontolosafi:aPourDescription>un événement culturel majeur célébrant l&apos;une des expressions musicales les plus authentiques du Maroc.</ontolosafi:aPourDescription>
+        <ontolosafi:aPourLocalisation>Ville de Safi</ontolosafi:aPourLocalisation>
+        <ontolosafi:imageURL>https://sl.bing.net/f8mNxkO6o6m</ontolosafi:imageURL>
+        <ontolosafi:organiséPar>Le Ministère de la Jeunesse avec la préfecture de la province de Safi.</ontolosafi:organiséPar>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#L’Îlot_Châtain -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#L’Îlot_Châtain">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restaurant"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Restauration"/>
+        <ontolosafi:aPourCoordonnées>Latitude : 32.3096° N</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourLocalisation>Avenue Mohamed Belkhadir, Quartier Riad, près de la mer, Safi</ontolosafi:aPourLocalisation>
+        <ontolosafi:aPourType>Cafe et Restaurant</ontolosafi:aPourType>
+        <ontolosafi:imageURL>https://sl.bing.net/hYlHBK37HeS</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Maison_d&apos;Hôtes_Dar_El_Bahar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Maison_d&apos;Hôtes_Dar_El_Bahar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Hébergement"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ItinéraireTouristique"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Maison_d’hôtes"/>
+        <ontolosafi:aPourCoordonnées>32.2960° N, 9.2310° W.</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourLocalisation>Quartier de la Médina</ontolosafi:aPourLocalisation>
+        <ontolosafi:aPourType>Maison d&apos;hôtes traditionnelle</ontolosafi:aPourType>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
