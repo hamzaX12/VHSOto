@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VHSOnto - Valorisation du Patrimoine de Safi</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#home" class="logo">
+                <i class="fas fa-gem"></i>
+                VHSOnto
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Accueil</a></li>
+                <li><a href="#heritage">Sites Patrimoniaux</a></li>
+                <li><a href="#events">Événements</a></li>
+                <li><a href="#handicrafts">Artisanat</a></li>
+                <li><a href="#services">Services Touristiques</a></li>
+                <li><a href="#map">Carte</a></li>
+            </ul>
+            
+            <div class="header-actions">
+                <div class="search-container">
+                    <button class="search-btn" onclick="toggleSearch()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input type="text" class="search-input" placeholder="Rechercher...">
+                </div>
+                
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="#home" class="logo">
+                <i class="fas fa-gem"></i>
+                VHSOnto
+            </a>
+            <button class="mobile-close-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <ul class="mobile-nav-menu">
+            <li><a href="#home" onclick="toggleMobileMenu()">Accueil</a></li>
+            <li><a href="#heritage" onclick="toggleMobileMenu()">Sites Patrimoniaux</a></li>
+            <li><a href="#events" onclick="toggleMobileMenu()">Événements</a></li>
+            <li><a href="#handicrafts" onclick="toggleMobileMenu()">Artisanat</a></li>
+            <li><a href="#services" onclick="toggleMobileMenu()">Services Touristiques</a></li>
+            <li><a href="#map" onclick="toggleMobileMenu()">Carte</a></li>
+        </ul>
+        
+        <div class="mobile-search">
+            <input type="text" placeholder="Rechercher dans le patrimoine...">
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Découvrez le Patrimoine de Safi</h1>
+            <p>Une ontologie touristique pour valoriser et explorer la richesse culturelle et historique de Safi, Maroc</p>
+            <a href="#heritage" class="cta-button">
+                <i class="fas fa-compass"></i> Explorer Maintenant
+            </a>
+        </div>
+    </section>
+
+    <!-- Heritage Sites Section -->
+    <section class="section" id="heritage">
+        <div class="container">
+            <h2 class="section-title">Sites Patrimoniaux de Safi</h2>
+            <p class="section-subtitle">Découvrez les trésors architecturaux et historiques qui font la richesse de Safi, ville millénaire du Maroc atlantique.</p>
+            
+            <div class="heritage-grid">
+                <div class="heritage-card">
+                    <div class="heritage-image">
+                        <i class="fas fa-fort-awesome"></i>
+                    </div>
+                    <div class="heritage-content">
+                        <h3>Château de Mer (Qasr al-Bahr)</h3>
+                        <p>Forteresse portugaise du XVIe siècle construite sur un îlot rocheux, symbole de l'histoire maritime de Safi. Offre une vue panoramique exceptionnelle sur l'océan Atlantique.</p>
+                        <div class="heritage-meta">
+                            <span><i class="fas fa-calendar"></i> XVIe siècle</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Front de mer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="heritage-card">
+                    <div class="heritage-image">
+                        <i class="fas fa-mosque"></i>
+                    </div>
+                    <div class="heritage-content">
+                        <h3>Grande Mosquée de Safi</h3>
+                        <p>Monument religieux emblématique de la ville, témoignage de l'architecture islamique traditionnelle marocaine avec son minaret caractéristique et ses décorations en zellige.</p>
+                        <div class="heritage-meta">
+                            <span><i class="fas fa-calendar"></i> XIIe siècle</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Médina</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="heritage-card">
+                    <div class="heritage-image">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <div class="heritage-content">
+                        <h3>Médina de Safi</h3>
+                        <p>Cœur historique de la ville avec ses ruelles étroites, ses souks traditionnels et ses maisons aux façades blanches. Centre névralgique de l'artisanat local.</p>
+                        <div class="heritage-meta">
+                            <span><i class="fas fa-calendar"></i> Médiévale</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Centre-ville</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="heritage-card">
+                    <div class="heritage-image">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="heritage-content">
+                        <h3>Quartier des Potiers</h3>
+                        <p>Zone artisanale historique où se perpétue l'art millénaire de la céramique safie. Ateliers traditionnels et fours ancestraux encore en activité.</p>
+                        <div class="heritage-meta">
+                            <span><i class="fas fa-calendar"></i> Traditionnel</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Bab Chaâba</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="heritage-card">
+                    <div class="heritage-image">
+                        <i class="fas fa-archway"></i>
+                    </div>
+                    <div class="heritage-content">
+                        <h3>Remparts et Portes de la Ville</h3>
+                        <p>Système défensif historique avec ses portes monumentales comme Bab Chaâba et Bab Lamrissa, témoins de l'architecture militaire marocaine.</p>
+                        <div class="heritage-meta">
+                            <span><i class="fas fa-calendar"></i> XVIe siècle</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Pourtour médina</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="heritage-card">
+                    <div class="heritage-image">
+                        <i class="fas fa-anchor"></i>
+                    </div>
+                    <div class="heritage-content">
+                        <h3>Port de Safi</h3>
+                        <p>Port historique et moderne, témoin de l'activité maritime séculaire de la ville. Point de départ des expéditions de pêche à la sardine.</p>
+                        <div class="heritage-meta">
+                            <span><i class="fas fa-calendar"></i> Historique</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Front de mer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="section" id="events">
+        <div class="container">
+            <h2 class="section-title">Événements Culturels</h2>
+            <p class="section-subtitle">Participez aux festivités qui rythment la vie culturelle de Safi tout au long de l'année.</p>
+            
+            <div class="events-timeline">
+                <div class="event-item">
+                    <div class="event-date">Juillet</div>
+                    <h3 class="event-title">Festival National de la Céramique</h3>
+                    <p>Événement phare célébrant l'art de la poterie safie avec des expositions, démonstrations d'artisans, concours et spectacles folkloriques. Rassemble les meilleurs céramistes du Maroc.</p>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">Août</div>
+                    <h3 class="event-title">Moussem de Sidi Bouzid</h3>
+                    <p>Pèlerinage traditionnel et festivités religieuses en l'honneur du saint patron de la ville. Processions, chants spirituels et rassemblements communautaires.</p>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">Septembre</div>
+                    <h3 class="event-title">Festival de la Sardine</h3>
+                    <p>Célébration de la tradition maritime de Safi avec dégustations, concours culinaires, spectacles de rue et animations autour de la pêche traditionnelle.</p>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">Octobre</div>
+                    <h3 class="event-title">Semaine du Patrimoine</h3>
+                    <p>Visites guidées gratuites, conférences historiques, expositions photographiques et ateliers pédagogiques pour découvrir l'héritage culturel de Safi.</p>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">Décembre</div>
+                    <h3 class="event-title">Marché de l'Artisanat</h3>
+                    <p>Grand marché saisonnier présentant les créations des artisans locaux : céramiques, textiles, bijoux et produits du terroir dans une ambiance festive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Handicrafts Section -->
+    <section class="section" id="handicrafts">
+        <div class="container">
+            <h2 class="section-title">Artisanat Traditionnel</h2>
+            <p class="section-subtitle">L'art millénaire de Safi, transmis de génération en génération, fait la renommée mondiale de la ville.</p>
+            
+            <div class="crafts-showcase">
+                <div class="craft-card">
+                    <div class="craft-icon">
+                        <i class="fas fa-vase"></i>
+                    </div>
+                    <h3>Céramique de Safi</h3>
+                    <p>Art emblématique de la ville, la céramique safie se distingue par ses couleurs vives, ses motifs géométriques et floraux, et sa qualité exceptionnelle reconnue internationalement.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>• Poteries utilitaires et décoratives</li>
+                        <li>• Carreaux de zellige traditionnels</li>
+                        <li>• Objets d'art contemporains</li>
+                        <li>• Techniques ancestrales préservées</li>
+                    </ul>
+                </div>
+
+                <div class="craft-card">
+                    <div class="craft-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Techniques de Cuisson</h3>
+                    <p>Maîtrise des fours traditionnels et des températures de cuisson, secrets jalousement gardés par les maîtres potiers pour obtenir les couleurs et textures uniques.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>• Fours à bois traditionnels</li>
+                        <li>• Cuisson à haute température</li>
+                        <li>• Émaillage spécialisé</li>
+                        <li>• Contrôle de l'atmosphère</li>
+                    </ul>
+                </div>
+
+                <div class="craft-card">
+                    <div class="craft-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Décoration et Motifs</h3>
+                    <p>Richesse des décors inspirés de l'art islamique, berbère et andalou, créant un style unique mêlant tradition et créativité contemporaine.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>• Motifs géométriques islamiques</li>
+                        <li>• Calligraphie arabe artistique</li>
+                        <li>• Patterns floraux stylisés</li>
+                        <li>• Couleurs symboliques</li>
+                    </ul>
+                </div>
+
+                <div class="craft-card">
+                    <div class="craft-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Formation et Transmission</h3>
+                    <p>Écoles d'artisanat et ateliers de formation perpétuent les savoir-faire traditionnels tout en encourageant l'innovation et la créativité des nouvelles générations.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>• École des Beaux-Arts de Safi</li>
+                        <li>• Ateliers de maîtres artisans</li>
+                        <li>• Programmes d'apprentissage</li>
+                        <li>• Coopératives d'artisans</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <h2 class="section-title">Services Touristiques</h2>
+            <p class="section-subtitle">Tous les services pour une expérience touristique authentique et mémorable à Safi.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Guides Touristiques</h3>
+                    <p>Guides professionnels certifiés, spécialistes de l'histoire et du patrimoine de Safi. Visites en français, arabe, anglais et espagnol.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>Hébergements</h3>
+                    <p>Large gamme d'hébergements : riads traditionnels, hôtels modernes, maisons d'hôtes authentiques et auberges de jeunesse.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Restaurants</h3>
+                    <p>Découvrez la gastronomie locale dans nos restaurants traditionnels : poissons frais, tajines, couscous et spécialités safiotes.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Transport</h3>
+                    <p>Services de transport adaptés : taxis, location de voitures, navettes aéroport et circuits organisés vers les sites touristiques.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3>Shopping</h3>
+                    <p>Boutiques d'artisanat, coopératives de céramistes, souks traditionnels et centres commerciaux pour tous vos achats souvenirs.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Activités</h3>
+                    <p>Ateliers de poterie, visites d'ateliers d'artisans, excursions côtières, découverte de la pêche traditionnelle et circuits culturels.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section" id="map">
+        <div class="container">
+            <h2 class="section-title">Carte Interactive du Patrimoine</h2>
+            <p class="section-subtitle">Explorez Safi à travers notre carte interactive qui vous guide vers tous les sites patrimoniaux et points d'intérêt.</p>
+            
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div>
+                        <i class="fas fa-map" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                        <br>
+                        <strong>Carte Interactive - Patrimoine de Safi</strong>
+                        <br>
+                        <small>Navigation GPS • Points d'intérêt • Itinéraires optimisés</small>
+                    </div>
+                </div>
+                
+                <div class="map-features">
+                    <div class="map-feature">
+                        <i class="fas fa-mosque" style="font-size: 2rem; color: #2c5aa0; margin-bottom: 0.5rem;"></i>
+                        <h4>Sites Historiques</h4>
+                        <p>12 monuments classés</p>
+                    </div>
+                    <div class="map-feature">
+                        <i class="fas fa-palette" style="font-size: 2rem; color: #f4a261; margin-bottom: 0.5rem;"></i>
+                        <h4>Ateliers d'Artisans</h4>
+                        <p>25+ ateliers visitables</p>
+                    </div>
+                    <div class="map-feature">
+                        <i class="fas fa-utensils" style="font-size: 2rem; color: #e76f51; margin-bottom: 0.5rem;"></i>
+                        <h4>Restaurants</h4>
+                        <p>30+ établissements</p>
+                    </div>
+                    <div class="map-feature">
+                        <i class="fas fa-bed" style="font-size: 2rem; color: #2a9d8f; margin-bottom: 0.5rem;"></i>
+                        <h4>Hébergements</h4>
+                        <p>15+ options</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>VHSOnto - Valorisation du Patrimoine de Safi</h3>
+            <p>Préservons et partageons notre héritage culturel pour les générations futures</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p style="margin-top: 2rem; opacity: 0.8;">&copy; 2024 VHSOnto. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
