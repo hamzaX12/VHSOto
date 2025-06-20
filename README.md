@@ -34,13 +34,13 @@ Les entités qui possèdent des coordonnées (`aPourCoordonnées`) sont affiché
 ```bash
 git clone git@github.com:hamzaX12/VHSOto.git
 cd VHSOto
-
+```
 ### 3. Installer les dépendances
 ```bash
 pip install fastapi uvicorn rdflib jinja2
-
-### 4. Lancer le serveur FastAPI
 ```
+### 4. Lancer le serveur FastAPI
+```bash
    uvicorn main:app --reload
 ```
 ### Ouvrez votre navigateur à l'adresse :
