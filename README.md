@@ -37,13 +37,13 @@ cd VHSOto
 
 ### 3. Installer les dépendances
 ```
-  pip install fastapi uvicorn rdflib jinja2
-  
+pip install fastapi uvicorn rdflib jinja2
+
 ### 4. Lancer le serveur FastAPI
 ```
    uvicorn main:app --reload
 ```
-Ouvrez votre navigateur à l'adresse :
+### Ouvrez votre navigateur à l'adresse :
 👉 http://127.0.0.1:8000
 
 
