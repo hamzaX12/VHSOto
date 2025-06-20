@@ -36,7 +36,7 @@ git clone git@github.com:hamzaX12/VHSOto.git
 cd VHSOto
 
 ### 3. Installer les dépendances
-```
+```bash
 pip install fastapi uvicorn rdflib jinja2
 
 ### 4. Lancer le serveur FastAPI
