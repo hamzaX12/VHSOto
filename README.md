@@ -28,53 +28,22 @@ Les entités qui possèdent des coordonnées (`aPourCoordonnées`) sont affiché
 
 ---
 
-## 🗂️ Structure du projet
-
-
----
-
 ## 🚀 Instructions pour exécuter le projet
 
 ### 1. Cloner le dépôt
-
 ```bash
 git clone git@github.com:hamzaX12/VHSOto.git
 cd VHSOto
-python -m venv venv
-source venv/bin/activate  # Sur Windows : venv\Scripts\activate
-3. Installer les dépendances
-bash
-Copy
-Edit
-pip install fastapi uvicorn rdflib jinja2
-4. Lancer le serveur FastAPI
-bash
-Copy
-Edit
-uvicorn main:app --reload
-5. Accéder à l’application
-Ouvre ton navigateur à l'adresse :
+
+### 3. Installer les dépendances
+```
+  pip install fastapi uvicorn rdflib jinja2
+  
+### 4. Lancer le serveur FastAPI
+```
+   uvicorn main:app --reload
+```
+Ouvrez votre navigateur à l'adresse :
 👉 http://127.0.0.1:8000
 
-🧠 Ontologie RDF (vh2.rdf)
-L’ontologie contient des classes telles que :
 
-SitePatrimonial
-
-ÉvénementCulturel
-
-Artisan, Artisanat
-
-Hébergement, Restauration, Transport, GuideTouristique
-
-Les propriétés principales utilisées :
-
-aPourCoordonnées
-
-aPourDescription
-
-aPourLocalisation
- Auteur
-Hamza Ben Allou
-Étudiant en Master SDA
-Université de Safi — 2025
