@@ -775,6 +775,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Association_des_Artisans_de_Safi">
         <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
         <ontolosafi:organiseÉvénement rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Exposition_Artisanale_de_Safi"/>
+        <ontolosafi:aPourDate>12 au 22 août</ontolosafi:aPourDate>
         <ontolosafi:aPourType>Association professionnelle</ontolosafi:aPourType>
         <ontolosafi:organiséPar>Exposition Artisanale de Safi</ontolosafi:organiséPar>
     </owl:NamedIndividual>
@@ -811,7 +812,7 @@
         <ontolosafi:aPourCoordonnées>32.2955° N, 9.2305° W</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourLocalisation>Quartier de la Médina</ontolosafi:aPourLocalisation>
         <ontolosafi:aPourType>Café traditionnel</ontolosafi:aPourType>
-        <ontolosafi:imageURL>https://sl.bing.net/f7PeUPvbwPs</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/R.b3a64a32e10dd23b94f345ff43552c67?rik=WO5t3eHV30%2fELw&amp;riu=http%3a%2f%2fphotos.wikimapia.org%2fp%2f00%2f02%2f37%2f09%2f61_big.jpg&amp;ehk=CKeGqvWzAyF6nhogFesXuhuNNSZQ6wac5YREaD%2bxxlA%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -823,7 +824,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Localisation"/>
         <ontolosafi:aPourCoordonnées>32.4000° N, 9.1500° W</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourDescription>Village côtier au nord de Safi, connu pour ses falaises et formations naturelles</ontolosafi:aPourDescription>
-        <ontolosafi:imageURL>https://sl.bing.net/eI7VSGNMG4W</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://www.sea-seek.com/images/2015/3/Beddouzza-phare.jpg</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -847,7 +848,7 @@
         <ontolosafi:aPourCoordonnées>32.2990° N, 9.2340° W.</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourDescription>Vestige de l&apos;époque coloniale portugaise</ontolosafi:aPourDescription>
         <ontolosafi:aPourLocalisation>Quartier de la Médina</ontolosafi:aPourLocalisation>
-        <ontolosafi:imageURL>https://sl.bing.net/k6HOatIQnn2</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://live.staticflickr.com/65535/52261343826_8af9dba6bc_b.jpg</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -885,7 +886,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Exposition_Artisanale_de_Safi">
         <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
-        <ontolosafi:aPourDate>10-20 août 2025</ontolosafi:aPourDate>
+        <ontolosafi:aPourDate>10-20 août</ontolosafi:aPourDate>
         <ontolosafi:aPourDescription>Exposition mettant en valeur l&apos;artisanat local</ontolosafi:aPourDescription>
         <ontolosafi:organiséPar>Association des Artisans de Safi</ontolosafi:organiséPar>
         <ontolosafi:organiséPar>Quartier de la Médina</ontolosafi:organiséPar>
@@ -910,7 +911,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Festival_National_de_la_Céramique">
         <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Festival"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
-        <ontolosafi:aPourDate>15 juillet 2025</ontolosafi:aPourDate>
+        <ontolosafi:aPourDate>15 juillet</ontolosafi:aPourDate>
         <ontolosafi:aPourDescription>Célébration annuelle de l&apos;art de la céramique</ontolosafi:aPourDescription>
         <ontolosafi:aPourLocalisation>Ville de Safi</ontolosafi:aPourLocalisation>
         <ontolosafi:organiséPar>Musée National de la Céramique</ontolosafi:organiséPar>
@@ -928,7 +929,7 @@
         <ontolosafi:aPourCoordonnées>32.4000° N, 9.1500° W</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourDescription>Grotte naturelle avec des formations géologiques uniques</ontolosafi:aPourDescription>
         <ontolosafi:aPourLocalisation>Cap Beddouza</ontolosafi:aPourLocalisation>
-        <ontolosafi:imageURL>https://sl.bing.net/cR2jUhoVXOe</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.p5IvywN-a5K0vfZoV-JwGQHaEK?o=7rm=3&amp;rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -942,7 +943,7 @@
         <ontolosafi:aPourCoordonnées>32.3080 N, −9.2400 W</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourLocalisation>64 Avenue John Kennedy, Safi</ontolosafi:aPourLocalisation>
         <ontolosafi:aPourType>Hôtel 3 étoiles</ontolosafi:aPourType>
-        <ontolosafi:imageURL>https://sl.bing.net/jmktn0cvg6K</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.G6xa9P7fngfE5bD5UqzYvwHaE8?rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -956,7 +957,7 @@
         <ontolosafi:aPourCoordonnées>32.2950 N, −9.2440 W</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourLocalisation>Corniche de Sidi Bouzid, Safi 46000, Maroc</ontolosafi:aPourLocalisation>
         <ontolosafi:aPourType>Hôtel  4 Étoiles</ontolosafi:aPourType>
-        <ontolosafi:imageURL>https://sl.bing.net/bEwf3BE5qlE</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://pics.uncubus.tech/images/22336/upload/16d152e0f92e614a3fa726c1346b42a3.jpg</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -969,7 +970,7 @@
         <ontolosafi:aPourLocalisation rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ville_de_Safi"/>
         <ontolosafi:aPourCoordonnées>32.2986 N, −9.2418 W</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourLocalisation>11 Place de l&apos;Indépendance, Safi</ontolosafi:aPourLocalisation>
-        <ontolosafi:imageURL>https://sl.bing.net/cMilPZvWXPE</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.6gHngKvL6a8PyKdBNM99SAHaFj?o=7rm=3&amp;rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -984,7 +985,7 @@
         <ontolosafi:aPourCoordonnées>32.3000° N, 9.2333° W</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourDescription>Forteresse portugaise du XVe siècle, emblème de Safi</ontolosafi:aPourDescription>
         <ontolosafi:aPourLocalisation>Ville de Safi</ontolosafi:aPourLocalisation>
-        <ontolosafi:imageURL>https://sl.bing.net/ed6hPWmTvNI</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.Qit1ETi9cHig08BFMZYKdwHaDt?rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1009,7 +1010,7 @@
         <ontolosafi:aPourCoordonnées>Latitude : 32.3052° N</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourLocalisation>2 Route de Laouinat, Safi, Maroc</ontolosafi:aPourLocalisation>
         <ontolosafi:aPourType>Restaurant</ontolosafi:aPourType>
-        <ontolosafi:imageURL>https://sl.bing.net/j5JJvBa9Sua</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.8-1yTN7FCxJytDGU9JVdNgHaEM?rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1035,7 +1036,7 @@
         <ontolosafi:aPourCoordonnées>32.2985° N, 9.2350° W</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourDescription>Lieu de culte juif historique</ontolosafi:aPourDescription>
         <ontolosafi:aPourLocalisation>Quartier juif de Safi</ontolosafi:aPourLocalisation>
-        <ontolosafi:imageURL>https://sl.bing.net/sBVneFcJbw</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/29/5a/a4/the-mausoleum-of-ouled.jpg?w=1800&amp;h=1000&amp;s=1</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1049,7 +1050,7 @@
         <ontolosafi:aPourCoordonnées>32.3010° N, 9.2330° W</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourDescription>Musée dédié à l’histoire et à l’art de la céramique safiote</ontolosafi:aPourDescription>
         <ontolosafi:aPourLocalisation>Ville de Safi</ontolosafi:aPourLocalisation>
-        <ontolosafi:imageURL>https://sl.bing.net/fHEm1XMyevA</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.nRf-5sZvE20DF3JOSufgIQHaEK?rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1061,7 +1062,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Localisation"/>
         <ontolosafi:aPourCoordonnées>32° 44′ nord, 9° 01′ ouest</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourDescription>Ville située à 60 km d’El Jadida et à 66 km de capitale de la province, Safi.</ontolosafi:aPourDescription>
-        <ontolosafi:imageURL>https://sl.bing.net/bIx8jGMh1xY</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.s9ESGThkQdp6cbzWo1xQkgHaEK?o=7rm=3&amp;rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1075,7 +1076,7 @@
         <ontolosafi:aPourCoordonnées>32.7460° N</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourDescription>la plage d&apos;Oualidia au Maroc est une belle lagune protégée avec des eaux calmes, idéale pour la baignade et les sports nautiques comme le surf et le kayak.</ontolosafi:aPourDescription>
         <ontolosafi:aPourLocalisation>Oualidia</ontolosafi:aPourLocalisation>
-        <ontolosafi:imageURL>https://sl.bing.net/jdqayLR7S6m</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.zg6QLyTf-bXdmbuGl5YRvQAAAA?o=7rm=3&amp;rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1089,7 +1090,7 @@
         <ontolosafi:aPourCoordonnées>32.3154° N, 9.2491° W</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourDescription>Située au nord de la ville, cette plage de sable fin est réputée pour ses vagues puissantes, idéales pour le surf.</ontolosafi:aPourDescription>
         <ontolosafi:aPourLocalisation>Safi</ontolosafi:aPourLocalisation>
-        <ontolosafi:imageURL>https://sl.bing.net/hrmkC35CUge</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP._zk4RSNuryTOtAtHfZf6VQHaE8?rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1103,7 +1104,7 @@
         <ontolosafi:aPourCoordonnées>32° 02′ 8″ N, 9° 20′ 30″ W</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourDescription>La plage de Souiria Lakdima est une destination balnéaire  sur la côte atlantique du Maroc.</ontolosafi:aPourDescription>
         <ontolosafi:aPourLocalisation>Souiria</ontolosafi:aPourLocalisation>
-        <ontolosafi:imageURL>https://sl.bing.net/el0mTFyZVPo</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.EePOzrvcRER_g5oAi5q8mQHaDx?o=7rm=3&amp;rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1117,7 +1118,7 @@
         <ontolosafi:aPourCoordonnées>32.3500° N, 9.2000° W</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourDescription>Plage réputée pour le surf</ontolosafi:aPourDescription>
         <ontolosafi:aPourLocalisation>Environ 10 km au nord de Safi</ontolosafi:aPourLocalisation>
-        <ontolosafi:imageURL>https://sl.bing.net/j8ZpdvLjgD6</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/R.17aa20fe2aa092c9431259bf90c90165?rik=LclJMlL%2bkw3VAw&amp;riu=http%3a%2f%2fwww.safi-ville.com%2fimages%2floisirs_plage_lalla-fatna_Y-Amaaou.jpg&amp;ehk=KCrsHf076rm7ufY1o3NaW6yFhU8BL5lLLJVuJfQ9j3g%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1129,7 +1130,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Poterie"/>
         <ontolosafi:aPourAtelier>Quartier de la Médina</ontolosafi:aPourAtelier>
         <ontolosafi:aPourDescription>Poterie traditionnelle avec des motifs géométriques</ontolosafi:aPourDescription>
-        <ontolosafi:imageURL>https://sl.bing.net/cXY7vwFHjG0</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.5cGoyfBc6V3j2Yn-ObBp-wHaE6?rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1142,7 +1143,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Quartier"/>
         <ontolosafi:aPourCoordonnées>32.3018° N, 9.2387° W</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourDescription>Quartier artisanal célèbre surtout pour la poterie. Bab Chaâba regroupe de nombreux ateliers et boutiques d’artisans potiers.</ontolosafi:aPourDescription>
-        <ontolosafi:imageURL>https://sl.bing.net/ddZrWKv7sfk</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.n8OyJxeQMqB_GdqftiL-_AHaFc?rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1155,7 +1156,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Quartier"/>
         <ontolosafi:aPourCoordonnées>32.2950° N, 9.2300° W</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourDescription>Quartier historique de Safi</ontolosafi:aPourDescription>
-        <ontolosafi:imageURL>https://sl.bing.net/iVZG3xtdYnA</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.vJY2laDymkRrdoYYLWrGJAHaFb?rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1169,7 +1170,7 @@
         <ontolosafi:aPourCoordonnées>32.2955° N</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourLocalisation>7 bis, Rue des Forgerons, Colline des Potiers, Safi</ontolosafi:aPourLocalisation>
         <ontolosafi:aPourType>Restaurant</ontolosafi:aPourType>
-        <ontolosafi:imageURL>https://sl.bing.net/h78Q65gJbbw</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.TWZXlkYjRFimjEm2pZMPNAAAAA?rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1196,7 +1197,7 @@
         <ontolosafi:aPourCoordonnées>32.3037 N, −9.2417 W</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourLocalisation>1 Rue des Crêtes, Safi 46000</ontolosafi:aPourLocalisation>
         <ontolosafi:aPourType>Restaurant</ontolosafi:aPourType>
-        <ontolosafi:imageURL>https://sl.bing.net/b3RhlsxQvJs</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://dynamic-media-cdn.tripadvisor.com/media/photo-o/01/b7/af/48/l-entree-du-riad-the.jpg?w=700&amp;h=-1&amp;s=1</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1207,7 +1208,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Localisation"/>
         <ontolosafi:aPourCoordonnées>32,04022° ou 32° 2′ 25″ nord</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourDescription>Souira Kedima, également connue sous le nom de Souira Guedima ou Aguz, est un petit village côtier .Il se trouve à l’embouchure de l’oued Tensift, sur la côte atlantique</ontolosafi:aPourDescription>
-        <ontolosafi:imageURL>https://sl.bing.net/hiMjpU4ihHM</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.nLCG78NWbGpsUd0rl3WH8AHaDt?rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1218,7 +1219,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Taxi"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Transport"/>
         <ontolosafi:aPourType>Service de taxi local</ontolosafi:aPourType>
-        <ontolosafi:imageURL>https://sl.bing.net/cJ0o2fExJZs</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.NwqOAWh4as-A3Tg8g9EHOwHaFe?rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
         <ontolosafi:zoneDesservie>Ville de Safi</ontolosafi:zoneDesservie>
     </owl:NamedIndividual>
     
@@ -1245,7 +1246,7 @@
         <ontolosafi:aPourCoordonnées>32.3038° N, −9.2404° W</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourLocalisation>Rue Dar Si Aissa, Quartier France, 46000 Safi, Maroc</ontolosafi:aPourLocalisation>
         <ontolosafi:aPourType>Hotel 3 Étoiles</ontolosafi:aPourType>
-        <ontolosafi:imageURL>https://sl.bing.net/b3kfFaKOAU0</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.PyNueSOb7YGJhKJZ1NCjyQHaEK?o=7rm=3&amp;rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1257,7 +1258,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Ville"/>
         <ontolosafi:aPourCoordonnées>32.3000° N, 9.2333° W.</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourDescription>Ville portuaire sur la côte atlantique du Maroc</ontolosafi:aPourDescription>
-        <ontolosafi:imageURL>https://sl.bing.net/bpD3pvKwvsG</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/R.17252e158dedec09582bbcf981439ece?rik=FKCI8GGo0aDhaQ&amp;pid=ImgRaw&amp;r=0&amp;sres=1&amp;sresct=1</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1285,7 +1286,7 @@
         <ontolosafi:aPourCoordonnées>32°17′41″ N, 9°14′1″ W</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourDescription>Le Tajine de Safi est une œuvre emblématique située sur la place Mohammed V à Safi, au Maroc. Ce monument est reconnu pour sa taille impressionnante et son importance culturelle.</ontolosafi:aPourDescription>
         <ontolosafi:aPourLocalisation>Ville de Safi</ontolosafi:aPourLocalisation>
-        <ontolosafi:imageURL>https://sl.bing.net/vZuDJM3jwa</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.DU1TaThp11DwCV9yNRf_LwHaFY?rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1295,10 +1296,10 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Festival_National_de_l’Art_d’El_Aïta">
         <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Festival"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
-        <ontolosafi:aPourDate>18 au 21 juillet 2024</ontolosafi:aPourDate>
+        <ontolosafi:aPourDate>18 au 21 juillet</ontolosafi:aPourDate>
         <ontolosafi:aPourDescription>un événement culturel majeur célébrant l&apos;une des expressions musicales les plus authentiques du Maroc.</ontolosafi:aPourDescription>
         <ontolosafi:aPourLocalisation>Ville de Safi</ontolosafi:aPourLocalisation>
-        <ontolosafi:imageURL>https://sl.bing.net/f8mNxkO6o6m</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.BnsxwsbSgnVVpveQMtpdXAHaEK?o=7rm=3&amp;rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
         <ontolosafi:organiséPar>Le Ministère de la Jeunesse avec la préfecture de la province de Safi.</ontolosafi:organiséPar>
     </owl:NamedIndividual>
     
@@ -1313,7 +1314,7 @@
         <ontolosafi:aPourCoordonnées>Latitude : 32.3096° N</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourLocalisation>Avenue Mohamed Belkhadir, Quartier Riad, près de la mer, Safi</ontolosafi:aPourLocalisation>
         <ontolosafi:aPourType>Cafe et Restaurant</ontolosafi:aPourType>
-        <ontolosafi:imageURL>https://sl.bing.net/hYlHBK37HeS</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.pAoP1ESR9b6G2XoYNtgH-gHaHa?o=7rm=3&amp;rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VHSOnto - Valorisation du Patrimoine de Safi</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIINfBIJPTRvlFFJFVAY/xLadgclBGnmaFN+" crossorigin="" />
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        /* Specific styles for heritage image display */
+        .heritage-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .heritage-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .heritage-image i {
+            font-size: 4rem;
+            color: #555;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        /* Map specific styles */
+        #map {
+            height: 500px;
+            width: 90%;
+            margin: 2rem auto; /* ✅ This centers it horizontally */
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#home" class="logo">
+                <i class="fas fa-gem"></i>
+                VHSOnto
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Accueil</a></li>
+                <li><a href="#heritage">Sites Patrimoniaux</a></li>
+                <li><a href="#events">Événements</a></li>
+                <li><a href="#handicrafts">Artisanat</a></li>
+                <li><a href="#services">Services Touristiques</a></li>
+                <li><a href="#map">Carte</a></li>
+            </ul>
+
+            <div class="header-actions">
+                <div class="search-container">
+                    <button class="search-btn" onclick="toggleSearch()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input type="text" class="search-input" placeholder="Rechercher...">
+                </div>
+
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="#home" class="logo">
+                <i class="fas fa-gem"></i>
+                VHSOnto
+            </a>
+            <button class="mobile-close-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <ul class="mobile-nav-menu">
+            <li><a href="#home" onclick="toggleMobileMenu()">Accueil</a></li>
+            <li><a href="#heritage" onclick="toggleMobileMenu()">Sites Patrimoniaux</a></li>
+            <li><a href="#events" onclick="toggleMobileMenu()">Événements</a></li>
+            <li><a href="#handicrafts" onclick="toggleMobileMenu()">Artisanat</a></li>
+            <li><a href="#services" onclick="toggleMobileMenu()">Services Touristiques</a></li>
+            <li><a href="#map" onclick="toggleMobileMenu()">Carte</a></li>
+        </ul>
+
+        <div class="mobile-search">
+            <input type="text" placeholder="Rechercher dans le patrimoine...">
+        </div>
+    </div>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Découvrez le Patrimoine de Safi</h1>
+            <p>Une ontologie touristique pour valoriser et explorer la richesse culturelle et historique de Safi, Maroc
+            </p>
+            <a href="#heritage" class="cta-button">
+                <i class="fas fa-compass"></i> Explorer Maintenant
+            </a>
+        </div>
+    </section>
+
+    <section class="section" id="heritage">
+        <div class="container">
+            <h2 class="section-title">Sites Patrimoniaux de Safi</h2>
+            <p class="section-subtitle">Découvrez les trésors architecturaux et historiques qui font la richesse de
+                Safi, ville millénaire du Maroc atlantique.</p>
+
+            <div class="heritage-grid">
+                {% for site in heritage_sites %}
+                <div class="heritage-card">
+                    <div class="heritage-image">
+                        {% if site.image %}
+                        <img src="{{ site.image }}" alt="{{ site.name }}">
+                        {% else %}
+                        <i class="fas fa-landmark"></i>
+                        {% endif %}
+                    </div>
+                    <div class="heritage-content">
+                        <h3>{{ site.name }}</h3>
+                        <p>{{ site.description }}</p>
+                        <div class="heritage-meta">
+                            <span><i class="fas fa-tag"></i> {{ site.type }}</span>
+                            <span><i class="fas fa-map-marker-alt"></i> {{ site.location }}</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="events">
+        <div class="container">
+            <h2 class="section-title">Événements Culturels</h2>
+            <p class="section-subtitle">Participez aux festivités qui rythment la vie culturelle de Safi tout au long de
+                l'année.</p>
+
+            <div class="events-timeline">
+                {% for event in events %}
+                <div class="event-item">
+                    <div class="event-date">{{ event.date }}</div>
+                    <h3 class="event-title">{{ event.name }}</h3>
+                    <p>{{ event.description }}</p>
+                    <div class="event-meta">
+                        <span><i class="fas fa-user-tie"></i> {{ event.organizer }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="handicrafts">
+        <div class="container">
+            <h2 class="section-title">Artisanat Traditionnel</h2>
+            <p class="section-subtitle">L'art millénaire de Safi, transmis de génération en génération, fait la renommée
+                mondiale de la ville.</p>
+
+            <div class="crafts-showcase">
+                {% for item in handicrafts %}
+                {% if item.type == "craft" %}
+                <div class="craft-card">
+                    <div class="craft-icon">
+                        <i class="fas fa-vase"></i>
+                    </div>
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.description }}</p>
+                    {% if item.image %}
+                    <img src="{{ item.image }}" alt="{{ item.name }}" style="max-width: 100%; margin-top: 1rem;">
+                    {% endif %}
+                </div>
+                {% endif %}
+                {% endfor %}
+
+                {% for item in handicrafts %}
+                {% if item.type == "artisan" %}
+                <div class="craft-card">
+                    <div class="craft-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.profession }} - {{ item.specialty }}</p>
+                    <p><i class="fas fa-map-marker-alt"></i> {{ item.workshop }}</p>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <div class="container">
+            <h2 class="section-title">Services Touristiques</h2>
+            <p class="section-subtitle">Tous les services pour une expérience touristique authentique et mémorable à
+                Safi.</p>
+
+            <div class="services-grid">
+                {% for service in services %}
+                <div class="service-card">
+
+                    {% if service.image %}
+                    <img src="{{ service.image }}" alt="{{ service.name }}"
+                        style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                    {% else %}
+                    <div class="service-icon">
+                        {% if service.category == "hébergement" %}
+                        <i class="fas fa-bed"></i>
+                        {% elif service.category == "restauration" %}
+                        <i class="fas fa-utensils"></i>
+                        {% elif service.category == "transport" %}
+                        <i class="fas fa-car"></i>
+                        {% elif service.category == "guide" %}
+                        <i class="fas fa-user-tie"></i>
+                        {% else %}
+                        <i class="fas fa-concierge-bell"></i>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+
+                    <h3>{{ service.name }}</h3>
+                    <p><strong>Type:</strong> {{ service.type }}</p>
+                    {% if service.location %}
+                    <p><i class="fas fa-map-marker-alt"></i> {{ service.location }}</p>
+                    {% endif %}
+                    {% if service.zone %}
+                    <p><i class="fas fa-map"></i> {{ service.zone }}</p>
+                    {% endif %}
+                    {% if service.description %}
+                    <p>{{ service.description }}</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="map">
+        <div class="container">
+            <h2 class="section-title">Carte Interactive du Patrimoine</h2>
+            <p class="section-subtitle">Explorez Safi à travers notre carte interactive qui vous guide vers tous les
+                sites patrimoniaux et points d'intérêt.</p>
+
+            <div id="map"></div>
+
+            <!-- <div class="map-features">
+                <div class="map-feature">
+                    <i class="fas fa-landmark" style="font-size: 2rem; color: #2c5aa0; margin-bottom: 0.5rem;"></i>
+                    <h4>Sites Patrimoniaux</h4>
+                    <p>{{ heritage_sites|length }} sites</p>
+                </div>
+                <div class="map-feature">
+                    <i class="fas fa-calendar" style="font-size: 2rem; color: #f4a261; margin-bottom: 0.5rem;"></i>
+                    <h4>Événements</h4>
+                    <p>{{ events|length }} événements</p>
+                </div>
+                <div class="map-feature">
+                    <i class="fas fa-vase" style="font-size: 2rem; color: #e76f51; margin-bottom: 0.5rem;"></i>
+                    <h4>Artisans</h4>
+                    <p>{{ handicrafts|selectattr('type', 'equalto', 'artisan')|list|length }} artisans</p>
+                </div>
+                <div class="map-feature">
+                    <i class="fas fa-bed" style="font-size: 2rem; color: #2a9d8f; margin-bottom: 0.5rem;"></i>
+                    <h4>Services</h4>
+                    <p>{{ services|length }} services</p>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>VHSOnto - Valorisation du Patrimoine de Safi</h3>
+            <p>Préservons et partageons notre héritage culturel pour les générations futures</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p style="margin-top: 2rem; opacity: 0.8;">&copy; 2025 VHSOnto. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="/static/script.js"></script>
+    <script>
+        // Comprehensive coordinate parsing function
+        function parseCoordinates(coordStr) {
+            if (!coordStr || typeof coordStr !== 'string') {
+                return [32.3008, -9.2372]; // Default Safi coordinates
+            }
+
+            // Normalize the string
+            coordStr = coordStr
+                .replace(/−/g, '-')                     // Unicode minus to normal minus
+                .replace(/ /g, ' ')                     // Narrow space to regular space
+                .replace(/Latitude\s*:\s*/gi, '')       // Remove "Latitude :" prefix
+                .replace(/"/g, '″').replace(/'/g, '′')   // Normalize quotes to proper symbols
+                .replace(/°/g, '°')                     // Normalize degree symbol
+                .replace(/,/g, ' ')                     // Replace commas with spaces
+                .replace(/\s+/g, ' ')                   // Collapse multiple spaces
+                .trim();
+
+            // Try different patterns in order of specificity
+
+            // Pattern 1: Complete DMS with direction (e.g. "32°17′41″ N 9°14′1″ W")
+            let dmsMatch = coordStr.match(/^(\d+)°(\d+)′(\d+)″\s*([NS])\s+(\d+)°(\d+)′(\d+)″\s*([EW])$/i);
+            if (dmsMatch) {
+                let lat = parseInt(dmsMatch[1]) + parseInt(dmsMatch[2]) / 60 + parseInt(dmsMatch[3]) / 3600;
+                let lon = parseInt(dmsMatch[5]) + parseInt(dmsMatch[6]) / 60 + parseInt(dmsMatch[7]) / 3600;
+                if (dmsMatch[4].toUpperCase() === 'S') lat *= -1;
+                if (dmsMatch[8].toUpperCase() === 'W') lon *= -1;
+                return [lat, lon];
+            }
+
+            // Pattern 2: Decimal degrees with direction (e.g. "32.3000° N 9.2333° W")
+            let decMatch = coordStr.match(/^([\d.]+)°?\s*([NS])\s+([\d.]+)°?\s*([EW])$/i);
+            if (decMatch) {
+                let lat = parseFloat(decMatch[1]);
+                let lon = parseFloat(decMatch[3]);
+                if (decMatch[2].toUpperCase() === 'S') lat *= -1;
+                if (decMatch[4].toUpperCase() === 'W') lon *= -1;
+                return [lat, lon];
+            }
+
+            // Pattern 3: Simple decimal pair (e.g. "32.3080 -9.2400")
+            let simpleDecMatch = coordStr.match(/^(-?\d+\.\d+)\s+(-?\d+\.\d+)$/);
+            if (simpleDecMatch) {
+                return [parseFloat(simpleDecMatch[1]), parseFloat(simpleDecMatch[2])];
+            }
+
+            // Pattern 4: Only latitude with direction (e.g. "32.2955° N")
+            let latOnlyMatch = coordStr.match(/^([\d.]+)°?\s*([NS])$/i);
+            if (latOnlyMatch) {
+                let lat = parseFloat(latOnlyMatch[1]);
+                if (latOnlyMatch[2].toUpperCase() === 'S') lat *= -1;
+                return [lat, -9.2372]; // Default longitude for Safi
+            }
+
+            // Pattern 5: Extract any two numbers that might be coordinates
+            let numbers = coordStr.match(/-?\d+\.\d+/g);
+            if (numbers && numbers.length >= 2) {
+                return [parseFloat(numbers[0]), parseFloat(numbers[1])];
+            }
+
+            // If nothing else works, use default coordinates
+            console.warn("Using default coordinates for:", coordStr);
+            return [32.3008, -9.2372];
+        }
+
+        // Initialize the map centered on Safi
+        const map = L.map('map').setView([32.3008, -9.2372], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Injected data from FastAPI
+        let heritageSiteData = {{ heritage_sites | tojson }};
+        let eventData = {{ events | tojson }};
+        let artisanData = {{ handicrafts | selectattr('type', 'equalto', 'artisan') | list | tojson }};
+        let serviceData = {{ services | tojson }};
+
+        // Combine all data arrays
+        const allPlaces = [...heritageSiteData, ...eventData, ...artisanData, ...serviceData];
+        console.log("Total places:", allPlaces.length);
+
+        // Add markers for all places
+        allPlaces.forEach(place => {
+            const coords = parseCoordinates(place.coordinates);
+
+            const marker = L.marker(coords).addTo(map);
+            let popupContent = `<strong>${place.name}</strong>`;
+
+            if (place.description) popupContent += `<br>${place.description}`;
+            if (place.category) popupContent += `<br><em>Category: ${place.category}</em>`;
+            if (place.profession) popupContent += `<br><em>Profession: ${place.profession}</em>`;
+            if (place.specialty) popupContent += `<br><em>Specialty: ${place.specialty}</em>`;
+            if (place.date) popupContent += `<br><em>Date: ${place.date}</em>`;
+
+            marker.bindPopup(popupContent);
+        });
+    </script>
+</body>
+
+</html>
