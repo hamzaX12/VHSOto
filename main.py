@@ -31,30 +31,41 @@ def get_property(resource, prop):
     return g.value(subject=resource, predicate=prop_uri)
 
 def get_heritage_sites():
-    sites = []
-    site_class = URIRef(ns["ontolosafi"] + "SitePatrimonial")
-    
-    for site in g.subjects(predicate=RDF.type, object=site_class):
-        name = site.split("#")[-1].replace("_", " ")
-        description = str(get_property(site, "aPourDescription") or "")
-        
-        # Handle different location types
-        location_obj = get_property(site, "aPourLocalisation")
-        location = ""
-        if isinstance(location_obj, Literal):
-            location = str(location_obj)
-        elif isinstance(location_obj, URIRef):
-            location = location_obj.split("#")[-1].replace("_", " ")
+    query = """
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX ontolosafi: <http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#>
 
-        coordinates = str(get_property(site, "aPourCoordonnées") or "")
-        image = str(get_property(site, "imageURL") or "")
-        
-        site_type = "Site Patrimonial"
-        for type_ in g.objects(subject=site, predicate=RDF.type):
-            if type_ != site_class and str(type_).startswith(ns["ontolosafi"]):
-                site_type = type_.split("#")[-1].replace("_", " ")
-                break
-        
+    SELECT ?site (SAMPLE(?description) AS ?desc) (SAMPLE(?location) AS ?loc)
+                 (SAMPLE(?coordinates) AS ?coord) (SAMPLE(?image) AS ?img)
+                 (SAMPLE(?typeAlt) AS ?type)
+    WHERE {
+        ?site rdf:type ontolosafi:SitePatrimonial .
+        OPTIONAL { ?site ontolosafi:aPourDescription ?description . }
+        OPTIONAL { ?site ontolosafi:aPourLocalisation ?location . }
+        OPTIONAL { ?site ontolosafi:aPourCoordonnées ?coordinates . }
+        OPTIONAL { ?site ontolosafi:imageURL ?image . }
+        OPTIONAL {
+            ?site rdf:type ?typeAlt .
+            FILTER(?typeAlt != ontolosafi:SitePatrimonial)
+        }
+    }
+    GROUP BY ?site
+    """
+
+    results = g.query(query)
+
+    sites = []
+    for row in results:
+        iri = str(row.site)
+        name = iri.split("#")[-1].replace("_", " ")
+        description = str(row.desc) if row.desc else ""
+        location = str(row.loc) if row.loc else ""
+        if location.startswith("http://"):
+            location = location.split("#")[-1].replace("_", " ")
+        coordinates = str(row.coord) if row.coord else ""
+        image = str(row.img) if row.img else ""
+        site_type = str(row.type).split("#")[-1].replace("_", " ") if row.type else "Site Patrimonial"
+
         sites.append({
             "name": name,
             "description": description,
@@ -63,28 +74,42 @@ def get_heritage_sites():
             "image": image,
             "type": site_type
         })
-    
+
     return sites
 
 def get_events():
+    query = """
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX ontolosafi: <http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#>
+
+    SELECT ?event (SAMPLE(?date) AS ?d) (SAMPLE(?description) AS ?desc)
+                  (SAMPLE(?organizer) AS ?org) (SAMPLE(?location) AS ?loc)
+                  (SAMPLE(?coordinates) AS ?coord)
+    WHERE {
+        ?event rdf:type ontolosafi:ÉvénementCulturel .
+        OPTIONAL { ?event ontolosafi:aPourDate ?date . }
+        OPTIONAL { ?event ontolosafi:aPourDescription ?description . }
+        OPTIONAL { ?event ontolosafi:organiséPar ?organizer . }
+        OPTIONAL { ?event ontolosafi:aPourLocalisation ?location . }
+        OPTIONAL { ?event ontolosafi:aPourCoordonnées ?coordinates . }
+    }
+    GROUP BY ?event
+    """
+
+    results = g.query(query)
+
     events = []
-    event_class = URIRef(ns["ontolosafi"] + "ÉvénementCulturel")
-    
-    for event in g.subjects(predicate=RDF.type, object=event_class):
-        name = event.split("#")[-1].replace("_", " ")
-        date = str(get_property(event, "aPourDate") or "")
-        description = str(get_property(event, "aPourDescription") or "")
-        organizer = str(get_property(event, "organiséPar") or "")
+    for row in results:
+        iri = str(row.event)
+        name = iri.split("#")[-1].replace("_", " ")
+        date = str(row.d) if row.d else ""
+        description = str(row.desc) if row.desc else ""
+        organizer = str(row.org) if row.org else ""
+        location = str(row.loc) if row.loc else ""
+        if location.startswith("http://"):
+            location = location.split("#")[-1].replace("_", " ")
+        coordinates = str(row.coord) if row.coord else ""
 
-        location_obj = get_property(event, "aPourLocalisation")
-        location = ""
-        if isinstance(location_obj, Literal):
-            location = str(location_obj)
-        elif isinstance(location_obj, URIRef):
-            location = location_obj.split("#")[-1].replace("_", " ")
-
-        coordinates = str(get_property(event, "aPourCoordonnées") or "")
-        
         events.append({
             "name": name,
             "date": date,
@@ -93,131 +118,133 @@ def get_events():
             "location": location,
             "coordinates": coordinates
         })
-    
+
     return events
 
+
 def get_handicrafts():
+    query = """
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX ontolosafi: <http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#>
+
+    SELECT ?entity (SAMPLE(?typeVal) AS ?type) (SAMPLE(?description) AS ?desc) 
+                   (SAMPLE(?image) AS ?img) (SAMPLE(?coordinates) AS ?coord)
+                   (SAMPLE(?profession) AS ?prof) (SAMPLE(?specialty) AS ?spec) 
+                   (SAMPLE(?workshop) AS ?work)
+    WHERE {
+        { 
+          ?entity rdf:type ontolosafi:Artisanat .
+          BIND("craft" AS ?typeVal)
+          OPTIONAL { ?entity ontolosafi:aPourDescription ?description . }
+          OPTIONAL { ?entity ontolosafi:imageURL ?image . }
+          OPTIONAL { ?entity ontolosafi:aPourCoordonnées ?coordinates . }
+        }
+        UNION
+        {
+          ?entity rdf:type ontolosafi:Artisan .
+          BIND("artisan" AS ?typeVal)
+          OPTIONAL { ?entity ontolosafi:aPourProfession ?profession . }
+          OPTIONAL { ?entity ontolosafi:aPourSpécialité ?specialty . }
+          OPTIONAL { ?entity ontolosafi:aPourAtelier ?workshop . }
+          OPTIONAL { ?entity ontolosafi:aPourCoordonnées ?coordinates . }
+        }
+    }
+    GROUP BY ?entity
+    """
+
+    results = g.query(query)
+
     crafts = []
-    craft_class = URIRef(ns["ontolosafi"] + "Artisanat")
-    artisan_class = URIRef(ns["ontolosafi"] + "Artisan")
-    
-    # Get craft types
-    for craft in g.subjects(predicate=RDF.type, object=craft_class):
-        craft_name = craft.split("#")[-1].replace("_", " ")
-        description = str(get_property(craft, "aPourDescription") or "")
-        image = str(get_property(craft, "imageURL") or "")
-        coordinates = str(get_property(craft, "aPourCoordonnées") or "")
-        
-        crafts.append({
-            "type": "craft",
-            "name": craft_name,
-            "description": description,
-            "image": image,
-            "coordinates": coordinates
-        })
-    
-    # Get artisans
-    for artisan in g.subjects(predicate=RDF.type, object=artisan_class):
-        name = artisan.split("#")[-1].replace("_", " ")
-        profession = str(get_property(artisan, "aPourProfession") or "")
-        specialty = str(get_property(artisan, "aPourSpécialité") or "")
-        workshop = str(get_property(artisan, "aPourAtelier") or "")
-        coordinates = str(get_property(artisan, "aPourCoordonnées") or "")
-        
-        crafts.append({
-            "type": "artisan",
+    for row in results:
+        iri = str(row.entity)
+        name = iri.split("#")[-1].replace("_", " ")
+        type_ = str(row.type) if row.type else ""
+
+        craft = {
+            "type": type_,
             "name": name,
-            "profession": profession,
-            "specialty": specialty,
-            "workshop": workshop,
-            "coordinates": coordinates
-        })
-    
+            "coordinates": str(row.coord) if row.coord else ""
+        }
+
+        if type_ == "craft":
+            craft["description"] = str(row.desc) if row.desc else ""
+            craft["image"] = str(row.img) if row.img else ""
+        elif type_ == "artisan":
+            craft["profession"] = str(row.prof) if row.prof else ""
+            craft["specialty"] = str(row.spec) if row.spec else ""
+            craft["workshop"] = str(row.work) if row.work else ""
+
+        crafts.append(craft)
+
     return crafts
 
 def get_services():
+    query = """
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX ontolosafi: <http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#>
+
+    SELECT ?entity (SAMPLE(?category) AS ?cat) (SAMPLE(?type) AS ?typ) (SAMPLE(?location) AS ?loc)
+                   (SAMPLE(?description) AS ?desc) (SAMPLE(?image) AS ?img) (SAMPLE(?coord) AS ?coord)
+                   (SAMPLE(?zone) AS ?zone) (SAMPLE(?langue) AS ?langue) (SAMPLE(?profession) AS ?profession)
+    WHERE {
+        {
+            ?entity rdf:type ontolosafi:Hébergement .
+            BIND("hébergement" AS ?category)
+            OPTIONAL { ?entity ontolosafi:aPourType ?type . }
+            OPTIONAL { ?entity ontolosafi:aPourDescription ?description . }
+            OPTIONAL { ?entity ontolosafi:imageURL ?image . }
+            OPTIONAL { ?entity ontolosafi:aPourCoordonnées ?coord . }
+            OPTIONAL { ?entity ontolosafi:aPourLocalisation ?location . }
+        }
+        UNION {
+            ?entity rdf:type ontolosafi:Restauration .
+            BIND("restauration" AS ?category)
+            OPTIONAL { ?entity ontolosafi:aPourType ?type . }
+            OPTIONAL { ?entity ontolosafi:imageURL ?image . }
+            OPTIONAL { ?entity ontolosafi:aPourCoordonnées ?coord . }
+            OPTIONAL { ?entity ontolosafi:aPourLocalisation ?location . }
+        }
+        UNION {
+            ?entity rdf:type ontolosafi:Transport .
+            BIND("transport" AS ?category)
+            OPTIONAL { ?entity ontolosafi:aPourType ?type . }
+            OPTIONAL { ?entity ontolosafi:zoneDesservie ?zone . }
+            OPTIONAL { ?entity ontolosafi:aPourCoordonnées ?coord . }
+        }
+        UNION {
+            ?entity rdf:type ontolosafi:GuideTouristique .
+            BIND("guide" AS ?category)
+            OPTIONAL { ?entity ontolosafi:aPourProfession ?profession . }
+            OPTIONAL { ?entity ontolosafi:parleLangue ?langue . }
+            OPTIONAL { ?entity ontolosafi:zoneCouverte ?zone . }
+            OPTIONAL { ?entity ontolosafi:aPourCoordonnées ?coord . }
+        }
+    }
+    GROUP BY ?entity
+    """
+
+    results = g.query(query)
+
     services = []
-    
-    def extract_location(resource):
-        location_obj = get_property(resource, "aPourLocalisation")
-        if isinstance(location_obj, Literal):
-            return str(location_obj)
-        elif isinstance(location_obj, URIRef):
-            return location_obj.split("#")[-1].replace("_", " ")
-        return ""
-    
-    # Get accommodations
-    accommodation_class = URIRef(ns["ontolosafi"] + "Hébergement")
-    for acc in g.subjects(predicate=RDF.type, object=accommodation_class):
-        name = acc.split("#")[-1].replace("_", " ")
-        service_type = str(get_property(acc, "aPourType") or "Hébergement")
-        location = extract_location(acc)
-        description = str(get_property(acc, "aPourDescription") or "")
-        image = str(get_property(acc, "imageURL") or "")
-        coordinates = str(get_property(acc, "aPourCoordonnées") or "")
-        
-        services.append({
-            "category": "hébergement",
+    for row in results:
+        iri = str(row.entity)
+        name = iri.split("#")[-1].replace("_", " ")
+        category = str(row.cat)
+        service = {
+            "category": category,
             "name": name,
-            "type": service_type,
-            "location": location,
-            "description": description,
-            "image": image,
-            "coordinates": coordinates
-        })
-    
-    # Get restaurants
-    restaurant_class = URIRef(ns["ontolosafi"] + "Restauration")
-    for rest in g.subjects(predicate=RDF.type, object=restaurant_class):
-        name = rest.split("#")[-1].replace("_", " ")
-        service_type = str(get_property(rest, "aPourType") or "Restauration")
-        location = extract_location(rest)
-        image = str(get_property(rest, "imageURL") or "")
-        coordinates = str(get_property(rest, "aPourCoordonnées") or "")
-        
-        services.append({
-            "category": "restauration",
-            "name": name,
-            "type": service_type,
-            "location": location,
-            "image": image,
-            "coordinates": coordinates
-        })
-    
-    # Get transports
-    transport_class = URIRef(ns["ontolosafi"] + "Transport")
-    for trans in g.subjects(predicate=RDF.type, object=transport_class):
-        name = trans.split("#")[-1].replace("_", " ")
-        service_type = str(get_property(trans, "aPourType") or "Transport")
-        zone = str(get_property(trans, "zoneDesservie") or "")
-        coordinates = str(get_property(trans, "aPourCoordonnées") or "")
-        
-        services.append({
-            "category": "transport",
-            "name": name,
-            "type": service_type,
-            "zone": zone,
-            "coordinates": coordinates
-        })
-    
-    # Get guides
-    guide_class = URIRef(ns["ontolosafi"] + "GuideTouristique")
-    for guide in g.subjects(predicate=RDF.type, object=guide_class):
-        name = guide.split("#")[-1].replace("_", " ")
-        profession = str(get_property(guide, "aPourProfession") or "Guide Touristique")
-        languages = str(get_property(guide, "parleLangue") or "")
-        zone = str(get_property(guide, "zoneCouverte") or "")
-        coordinates = str(get_property(guide, "aPourCoordonnées") or "")
-        
-        services.append({
-            "category": "guide",
-            "name": name,
-            "profession": profession,
-            "languages": languages,
-            "zone": zone,
-            "coordinates": coordinates
-        })
-    
+            "type": str(row.typ) if row.typ else "",
+            "location": str(row.loc).split("#")[-1].replace("_", " ") if row.loc and str(row.loc).startswith("http") else str(row.loc or ""),
+            "description": str(row.desc) if row.desc else "",
+            "image": str(row.img) if row.img else "",
+            "coordinates": str(row.coord) if row.coord else "",
+            "zone": str(row.zone) if row.zone else "",
+            "languages": str(row.langue) if row.langue else "",
+            "profession": str(row.profession) if row.profession else ""
+        }
+
+        services.append(service)
+
     return services
 
 @app.get("/")

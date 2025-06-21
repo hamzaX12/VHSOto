@@ -790,6 +790,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#BusTouristique"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Transport"/>
         <ontolosafi:aPourType>Bus à impériale pour les circuits touristiques.</ontolosafi:aPourType>
+        <ontolosafi:imageURL>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-8C6VGAhztLKLQoSl8AfMFs1mtSW9k7-s7l_7vRjFuqR4ihac_CkdiOXJXWMck9q_Rcs&amp;usqp=CAU</ontolosafi:imageURL>
         <ontolosafi:zoneDesservie>Principaux sites touristiques de Safi</ontolosafi:zoneDesservie>
     </owl:NamedIndividual>
     
@@ -1269,6 +1270,7 @@
         <ontolosafi:aPourCoordonnées>32.2940° N, 9.2290° W</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourLocalisation>Centre-ville de Safi</ontolosafi:aPourLocalisation>
         <ontolosafi:aPourType>Cuisine marocaine</ontolosafi:aPourType>
+        <ontolosafi:imageURL>https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/ce/85/82/riad-du-pecheur-safi.jpg?w=900&amp;h=500&amp;s=1</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1304,7 +1306,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Taxi"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Transport"/>
         <ontolosafi:aPourType>Service de taxi local</ontolosafi:aPourType>
-        <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.NwqOAWh4as-A3Tg8g9EHOwHaFe?rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
+        <ontolosafi:imageURL>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHBDKS7569_iu3m9YVQTnpXxwkJxiDBul82Q&amp;s</ontolosafi:imageURL>
         <ontolosafi:zoneDesservie>Ville de Safi</ontolosafi:zoneDesservie>
     </owl:NamedIndividual>
     
@@ -1453,6 +1455,7 @@
         <ontolosafi:aPourCoordonnées>32.2960° N, 9.2310° W.</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourLocalisation>Quartier de la Médina</ontolosafi:aPourLocalisation>
         <ontolosafi:aPourType>Maison d&apos;hôtes traditionnelle</ontolosafi:aPourType>
+        <ontolosafi:imageURL>https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/1c/0a/de/caption.jpg?w=800&amp;h=400&amp;s=1</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
