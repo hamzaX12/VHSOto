@@ -1,8 +1,10 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request,Query
+from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from rdflib import Graph, URIRef, Literal
 from rdflib.namespace import RDF
+import re
 
 app = FastAPI()
 
@@ -227,3 +229,39 @@ async def home(request: Request):
         "handicrafts": get_handicrafts(),
         "services": get_services()
     })
+
+def extract_month_from_date(date_str):
+    match = re.search(r"(janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)", date_str, re.IGNORECASE)
+    return match.group(0).lower() if match else None
+
+@app.get("/filter-events")
+async def filter_events(month: str = Query(..., description="Mois en français, minuscule")):
+    query = f"""
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX ontolosafi: <http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#>
+
+    SELECT ?evenement ?date ?organisateur ?description
+    WHERE {{
+      ?evenement rdf:type ontolosafi:ÉvénementCulturel .
+      OPTIONAL {{ ?evenement ontolosafi:aPourDate ?date . }}
+      OPTIONAL {{ ?evenement ontolosafi:organiséPar ?organisateur . }}
+      OPTIONAL {{ ?evenement ontolosafi:aPourDescription ?description . }}
+
+      FILTER(CONTAINS(LCASE(STR(?date)), "{month}"))
+    }}
+    """
+
+    results = g.query(query)
+
+    filtered_events = []
+    for row in results:
+        iri = str(row.evenement)
+        name = iri.split("#")[-1].replace("_", " ")
+        filtered_events.append({
+            "name": name,
+            "date": str(row.date) if row.date else "",
+            "organizer": str(row.organisateur) if row.organisateur else "",
+            "description": str(row.description) if row.description else ""
+        })
+
+    return JSONResponse(filtered_events)

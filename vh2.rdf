@@ -201,7 +201,9 @@
 
     <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourCoordonnées -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourCoordonnées"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#aPourCoordonnées">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -894,6 +896,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Exposition_des_produits_artisanaux -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Exposition_des_produits_artisanaux">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+        <ontolosafi:aPourDate>21 – 23 juillet</ontolosafi:aPourDate>
+        <ontolosafi:aPourType>Salon-exposition artisanale</ontolosafi:aPourType>
+        <ontolosafi:organiséPar>Fondation Safi Horizon / partenaires festivaliers</ontolosafi:organiséPar>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Fatima_El_Hadi -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Fatima_El_Hadi">
@@ -902,6 +915,17 @@
         <ontolosafi:aPourAtelier>Quartier de la Médina</ontolosafi:aPourAtelier>
         <ontolosafi:aPourProfession>Artisane tisserande</ontolosafi:aPourProfession>
         <ontolosafi:aPourSpécialité>Tissage de Safi</ontolosafi:aPourSpécialité>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Festival_Amwaj_Assafi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Festival_Amwaj_Assafi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+        <ontolosafi:aPourDate>21 – 23 juillet</ontolosafi:aPourDate>
+        <ontolosafi:aPourType>Festival musical &amp; culturel multi-arts</ontolosafi:aPourType>
+        <ontolosafi:organiséPar>Fondation Safi Horizon (historique)</ontolosafi:organiséPar>
     </owl:NamedIndividual>
     
 
@@ -1001,6 +1025,44 @@
     
 
 
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#La_Chasse_et_la_Pêche_Touristique -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#La_Chasse_et_la_Pêche_Touristique">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SitePatrimonial"/>
+        <ontolosafi:aPourDescription>la région de Safi est fort giboyeuse. On y trouve (lièvres, cailles, bécassines, perdrix rouges, pigeons sauvages,...).</ontolosafi:aPourDescription>
+        <ontolosafi:aPourLocalisation>32.2989,9.2369</ontolosafi:aPourLocalisation>
+        <ontolosafi:aPourLocalisation>ville de safi</ontolosafi:aPourLocalisation>
+        <ontolosafi:imageURL>http://www.safi-ville.com/images/monument_plage_peche2.jpg</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#La_Médina -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#La_Médina">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Monument"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SitePatrimonial"/>
+        <ontolosafi:aPourCoordonnées>32.2833 -9.2333</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourDescription>La Médina, depuis la place de l&apos;indépendance, qu&apos;occupent les marchands le matin et les amuseurs publics le soir, la Rue du Souk traverse la Médina jusqu&apos;à Bâb Chaâba (la porte du vallon)</ontolosafi:aPourDescription>
+        <ontolosafi:aPourLocalisation>ville de safi</ontolosafi:aPourLocalisation>
+        <ontolosafi:imageURL>http://www.safi-ville.com/images/monument_medina-0.jpg</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#La_Poterie_et_la_Céramique -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#La_Poterie_et_la_Céramique">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Monument"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SitePatrimonial"/>
+        <ontolosafi:aPourCoordonnées>32.29 N 9.23 W</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourDescription>La nature a favorisé la ville de Safi par l&apos;abondance de l&apos;argile, matière première et le genêt servant à chauffer les fours de cuisson</ontolosafi:aPourDescription>
+        <ontolosafi:aPourLocalisation>ville de Safi</ontolosafi:aPourLocalisation>
+        <ontolosafi:imageURL>http://www.safi-ville.com/images/monument_mag_poteries_1.jpg</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#La_Trattoria -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#La_Trattoria">
@@ -1011,6 +1073,18 @@
         <ontolosafi:aPourLocalisation>2 Route de Laouinat, Safi, Maroc</ontolosafi:aPourLocalisation>
         <ontolosafi:aPourType>Restaurant</ontolosafi:aPourType>
         <ontolosafi:imageURL>https://th.bing.com/th/id/OIP.8-1yTN7FCxJytDGU9JVdNgHaEM?rs=1&amp;pid=ImgDetMain</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#La_grotte_GHAR_GORANI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#La_grotte_GHAR_GORANI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SitePatrimonial"/>
+        <ontolosafi:aPourCoordonnées>32° 33′ 22″ ,9° 15′ 5″</ontolosafi:aPourCoordonnées>
+        <ontolosafi:aPourDescription>Situé à 27Kms au nord de Safi et à 3Kms à gauche de la RS 121 (El Jadida - Safi). Cette merveille spéléologique est située dans le site touristique Cap BEDDOUZA avec sa belle vue panoramique sur l&apos;Océan</ontolosafi:aPourDescription>
+        <ontolosafi:aPourLocalisation>Nord safi</ontolosafi:aPourLocalisation>
+        <ontolosafi:imageURL>http://www.safi-ville.com/images/monument_grotte_1.jpg</ontolosafi:imageURL>
     </owl:NamedIndividual>
     
 
@@ -1135,6 +1209,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Printemps_des_Instruments_à_Cordes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Printemps_des_Instruments_à_Cordes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+        <ontolosafi:aPourDate>25 avril</ontolosafi:aPourDate>
+        <ontolosafi:aPourType>Festival de musique de chambre (cordes)</ontolosafi:aPourType>
+        <ontolosafi:organiséPar>association locale / Institut culturel</ontolosafi:organiséPar>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Quartier_de_Bab_Chaâba -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Quartier_de_Bab_Chaâba">
@@ -1236,6 +1321,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Transes_Atlantic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Transes_Atlantic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+        <ontolosafi:aPourDate>1 juin</ontolosafi:aPourDate>
+        <ontolosafi:aPourType>Festival musical/transes/traditions</ontolosafi:aPourType>
+        <ontolosafi:organiséPar>Ministère de la Culture</ontolosafi:organiséPar>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Valley_Boutique_Hotel -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Valley_Boutique_Hotel">
@@ -1276,6 +1372,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#association_locale -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#association_locale"/>
+    
+
+
     <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#le_plus_grand_tajin__du_monde -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#le_plus_grand_tajin__du_monde">
@@ -1305,6 +1407,29 @@
     
 
 
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#La_Caserne_(El_Kechla_ou_Dar_Essoltan) -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#La_Caserne_(El_Kechla_ou_Dar_Essoltan)">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Monument"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#SitePatrimonial"/>
+        <ontolosafi:aPourDescription>Les murs puissants de cette citadelle datent de l&apos;occupation Portugaise. Franchie la porte monumentale, tourne à droite pour gagner, par une rampe</ontolosafi:aPourDescription>
+        <ontolosafi:aPourLocalisation>ville de safi</ontolosafi:aPourLocalisation>
+        <ontolosafi:imageURL>http://www.safi-ville.com/images/monument_El-Kechla_1.jpg</ontolosafi:imageURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Lumières_de_Safi_–_cinéma -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Lumières_de_Safi_–_cinéma">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+        <ontolosafi:aPourDate>1 avril</ontolosafi:aPourDate>
+        <ontolosafi:aPourType>Festival de cinéma francophone</ontolosafi:aPourType>
+        <ontolosafi:organiséPar>Institut Français (historiquement)</ontolosafi:organiséPar>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#L’Îlot_Châtain -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#L’Îlot_Châtain">
@@ -1328,6 +1453,17 @@
         <ontolosafi:aPourCoordonnées>32.2960° N, 9.2310° W.</ontolosafi:aPourCoordonnées>
         <ontolosafi:aPourLocalisation>Quartier de la Médina</ontolosafi:aPourLocalisation>
         <ontolosafi:aPourType>Maison d&apos;hôtes traditionnelle</ontolosafi:aPourType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Red_Sand_–_Folklore_international -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#Red_Sand_–_Folklore_international">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mine/ontologies/2025/4/ontolosafi#ÉvénementCulturel"/>
+        <ontolosafi:aPourDate>4 – 8 avril</ontolosafi:aPourDate>
+        <ontolosafi:aPourType>Festival folklorique / traditions locales</ontolosafi:aPourType>
+        <ontolosafi:organiséPar>Ville de Safi / délégation culturelle</ontolosafi:organiséPar>
     </owl:NamedIndividual>
 </rdf:RDF>
 

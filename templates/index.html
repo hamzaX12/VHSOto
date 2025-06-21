@@ -46,6 +46,41 @@
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+          /* Events Filter Styles */
+          .events-filter {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .events-filter label {
+            font-weight: 600;
+            color: #2c5aa0;
+            margin-right: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .events-filter select {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+
+        .events-filter select:focus {
+            outline: none;
+            border-color: #f4a261;
+            box-shadow: 0 0 0 3px rgba(244, 162, 97, 0.1);
+        }
+
+        .events-filter select:hover {
+            border-color: #2c5aa0;
+        }
+
     </style>
 </head>
 
@@ -152,10 +187,27 @@
             <h2 class="section-title">Événements Culturels</h2>
             <p class="section-subtitle">Participez aux festivités qui rythment la vie culturelle de Safi tout au long de
                 l'année.</p>
-
+            <div class="events-filter">
+                <label for="monthFilter">Filtrer par mois :</label>
+                <select id="monthFilter" onchange="filterEvents()">
+                    <option value="all">Tous les mois</option>
+                    <option value="janvier">Janvier</option>
+                    <option value="février">Février</option>
+                    <option value="mars">Mars</option>
+                    <option value="avril">Avril</option>
+                    <option value="mai">Mai</option>
+                    <option value="juin">Juin</option>
+                    <option value="juillet">Juillet</option>
+                    <option value="août">Août</option>
+                    <option value="septembre">Septembre</option>
+                    <option value="octobre">Octobre</option>
+                    <option value="novembre">Novembre</option>
+                    <option value="décembre">Décembre</option>
+                </select>
+                </div>
             <div class="events-timeline">
                 {% for event in events %}
-                <div class="event-item">
+                <div class="event-item" data-month="{{ event.month }}">
                     <div class="event-date">{{ event.date }}</div>
                     <h3 class="event-title">{{ event.name }}</h3>
                     <p>{{ event.description }}</p>
@@ -197,7 +249,9 @@
                         <i class="fas fa-user"></i>
                     </div>
                     <h3>{{ item.name }}</h3>
-                    <p>{{ item.profession }} - {{ item.specialty }}</p>
+                    {% if item.profession and item.specialty %}
+                        <p>{{ item.profession }} - {{ item.specialty }}</p>
+                    {% endif %}
                     <p><i class="fas fa-map-marker-alt"></i> {{ item.workshop }}</p>
                 </div>
                 {% endif %}
@@ -236,7 +290,12 @@
                     {% endif %}
 
                     <h3>{{ service.name }}</h3>
+                    {% if service.type %}
                     <p><strong>Type:</strong> {{ service.type }}</p>
+                    {% endif %}
+                    {% if service.profession %}
+                    <p><strong>Type:</strong> {{ service.profession }}</p>
+                    {% endif %}
                     {% if service.location %}
                     <p><i class="fas fa-map-marker-alt"></i> {{ service.location }}</p>
                     {% endif %}
@@ -300,6 +359,49 @@
     </footer>
 
     <script src="/static/script.js"></script>
+    <script>
+    async function filterEvents() {
+            const selectedMonth = document.getElementById('monthFilter').value.toLowerCase();
+
+            if (selectedMonth === "all") {
+                location.reload(); // Recharge la page pour afficher tous les événements
+                return;
+            }
+
+            try {
+                const response = await fetch(`/filter-events?month=${encodeURIComponent(selectedMonth)}`);
+                if (!response.ok) throw new Error("Erreur lors de la récupération des événements");
+                const events = await response.json();
+
+                const timeline = document.querySelector(".events-timeline");
+                timeline.innerHTML = ""; // Efface les événements actuels
+
+                if (events.length === 0) {
+                    timeline.innerHTML = "<p style='text-align:center;color:#888'>Aucun événement pour ce mois.</p>";
+                    return;
+                }
+
+                for (const event of events) {
+                    const item = document.createElement("div");
+                    item.classList.add("event-item");
+                    item.innerHTML = `
+                <div class="event-date">${event.date}</div>
+                <h3 class="event-title">${event.name}</h3>
+                <p>${event.description || ""}</p>
+                <div class="event-meta">
+                    <span><i class="fas fa-user-tie"></i> ${event.organizer || ""}</span>
+                </div>
+            `;
+                    timeline.appendChild(item);
+                }
+            } catch (error) {
+                console.error(error);
+                alert("Une erreur est survenue lors du chargement des événements.");
+            }
+        }
+
+    </script>
+        
     <script>
         // Comprehensive coordinate parsing function
         function parseCoordinates(coordStr) {
